@@ -2,11 +2,7 @@ import styled from "styled-components";
 import { useState, ChangeEvent, FC, useCallback, FormEvent } from "react";
 import { MemoList } from "./MemoList";
 import dayjs from "dayjs"; 
-
-export type Memo = {
-  text: string;
-  date: string;
-};
+import {Memo} from "../type/MemoType"
 
 export const App:FC = () => {
   //textbox State String

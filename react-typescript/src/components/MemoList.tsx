@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { FC } from "react";
-
-export type Memo = {
-  text: string;
-  date: string;
-};
+import { Memo } from "../type/MemoType";
 
 //Propsの型宣言
 type Props = {
