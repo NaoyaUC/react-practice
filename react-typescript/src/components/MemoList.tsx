@@ -16,20 +16,25 @@ export const MemoList: FC<Props> = (props) => {
       {memos.map((memo: Memo, index: number) => (
         <MemoLi key={memo.text}>
           {memo.text}:{memo.date}
-          <SButton onClick={() => onDeleteMemo(index)}>削除</SButton>
+          <SButton>編集</SButton>
+          <SButton color={"red"} onClick={() => onDeleteMemo(index)}>
+            削除
+          </SButton>
         </MemoLi>
       ))}
     </MemoUl>
   );
 };
 
-const SButton = styled.button`
+type ButtonProps = { color?: string };
+
+const SButton = styled.button<ButtonProps>`
   padding: 8px 12px;
   margin-left: 8px;
   cursor: pointer;
   border-radius: 8px;
   border: none;
-  background-color: #6186ec;
+  background-color: ${(props) => (props?.color ? props.color : "#6186ec")};
   color: #fff;
 `;
 
